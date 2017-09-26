@@ -58,14 +58,15 @@
 
   <script type="text/javascript">
     
-
+    //Starts game function when page loads
     $(document).ready(function game() {
       var value = 0
     
 
+    // Random number rounds down to 0-101 then adds 19 for range 19-120
+    $('#magicNum').html((Math.floor(Math.random()*102))+19); 
 
-    $('#magicNum').html((Math.floor(Math.random()*102))+19);
-
+    // For each gem, number rounds down to 11 then adds 1 for range 1-12
     $('#gemA').on('click', function() {
       var hat = ((Math.floor(Math.random()*12))+1)
       console.log(hat)
@@ -87,13 +88,15 @@
       console.log(hat)
       });
 
-    $('#gemNum').html()
     // Tracks total value from user's gem clicks
+    $('#gemNum').html()
     console.log(gemNum);
 
+    //Win
     if (gemNum === magicNum) {
       alert('You got it!')
     }
+    //Bust
     else if (gemNum > magicNum) {
       alert('Too many gems!  Game over, refresh to play again.')
     };
