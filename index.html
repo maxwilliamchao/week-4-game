@@ -57,7 +57,11 @@
 
 
   <script type="text/javascript">
-    var qwerty = ''
+    
+
+    $(document).ready(function game() {
+      var value = 0
+    
 
 
     $('#magicNum').html((Math.floor(Math.random()*102))+19);
@@ -65,6 +69,7 @@
     $('#gemA').on('click', function() {
       var hat = ((Math.floor(Math.random()*12))+1)
       console.log(hat)
+      gemNum += this.value;
       });
 
     $('#gemB').on('click', function() {
@@ -84,13 +89,16 @@
 
     $('#gemNum').html()
     // Tracks total value from user's gem clicks
+    console.log(gemNum);
 
     if (gemNum === magicNum) {
       alert('You got it!')
     }
     else if (gemNum > magicNum) {
-      alert('Too many gems!  Game over.')
+      alert('Too many gems!  Game over, refresh to play again.')
     };
+
+  });
   </script>
 </body>
 </html>
